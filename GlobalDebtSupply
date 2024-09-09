@@ -1,0 +1,445 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the data
+file_path = 'Real World - Sheet1.csv'
+df = pd.read_csv(file_path, encoding='ascii')
+
+# Display the first few rows of the dataframe
+print(df.head())
+
+# Check the data types
+print(df.dtypes)
+# Transpose the dataframe to correct the structure
+df = df.T
+
+# Set the first row as the header
+df.columns = df.iloc[0]
+
+# Remove the first row (now redundant header)
+df = df.iloc[1:].reset_index(drop=True)
+
+# Clean up column names
+df.columns = df.columns.str.strip()
+
+# Display the corrected dataframe
+print(df.head())
+
+# Check data types
+print(df.dtypes)
+
+# Convert numeric columns to appropriate data types
+df['PPP'] = df['PPP'].str.replace('$', '').str.replace(',', '').astype(float)
+df['GNI'] = df['GNI'].str.replace('$', '').str.replace(',', '').astype(float)
+df['Global Debt Supply'] = df['Global Debt Supply'].str.replace('$', '').str.replace(',', '').astype(float)
+
+# Display updated data types
+print(df.dtypes)
+
+# Show summary statistics
+print(df.describe())
+# Transpose the dataframe to correct the structure
+df = df.T
+
+# Set the first row as the header
+df.columns = df.iloc[0]
+
+# Remove the first row (now redundant header)
+df = df.iloc[1:].reset_index(drop=True)
+
+# Clean up column names
+df.columns = df.columns.str.strip()
+
+# Display the corrected dataframe
+print(df.head())
+
+# Check data types
+print(df.dtypes)
+
+# Convert numeric columns to appropriate data types
+df['PPP'] = df['PPP'].str.replace('$', '').str.replace(',', '').astype(float)
+df['GNI'] = df['GNI'].str.replace('$', '').str.replace(',', '').astype(float)
+df['Global Debt Supply'] = df['Global Debt Supply'].str.replace('$', '').str.replace(',', '').astype(float)
+
+# Display updated data types
+print(df.dtypes)
+
+# Show summary statistics
+print(df.describe())
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the data
+file_path = 'Real World - Sheet1.csv'
+df = pd.read_csv(file_path, encoding='ascii')
+
+# Display the first few rows of the dataframe
+print("Original DataFrame:")
+print(df.head())
+
+# Transpose the dataframe to correct the structure
+df = df.T
+
+# Set the first row as the header
+df.columns = df.iloc[0]
+
+# Remove the first row (now redundant header)
+df = df.iloc[1:].reset_index(drop=True)
+
+# Clean up column names
+df.columns = df.columns.str.strip()
+
+# Display the corrected dataframe
+print("\
+Corrected DataFrame:")
+print(df.head())
+
+# Check data types
+print("\
+Data Types:")
+print(df.dtypes)
+
+# Convert numeric columns to appropriate data types
+df['PPP'] = df['PPP'].str.replace('$', '').str.replace(',', '').astype(float)
+df['GNI'] = df['GNI'].str.replace('$', '').str.replace(',', '').astype(float)
+df['Global Debt Supply'] = df['Global Debt Supply'].str.replace('$', '').str.replace(',', '').astype(float)
+
+# Display updated data types
+print("\
+Updated Data Types:")
+print(df.dtypes)
+
+# Show summary statistics
+print("\
+Summary Statistics:")
+print(df.describe())
+
+# Create visualizations
+plt.figure(figsize=(12, 6))
+sns.scatterplot(data=df, x='PPP', y='GNI')
+plt.title('PPP vs GNI')
+plt.xlabel('PPP (Purchasing Power Parity)')
+plt.ylabel('GNI (Gross National Income)')
+plt.show()
+
+plt.figure(figsize=(12, 6))
+sns.boxplot(data=df, y='Debt Service')
+plt.title('Distribution of Debt Service')
+plt.ylabel('Debt Service')
+plt.show()
+
+# Display correlation matrix
+correlation_matrix = df.corr()
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix')
+plt.show()
+
+print("Exploratory Data Analysis completed.")
+import pandas as pd
+
+# Load the data
+file_path = 'Real World - Sheet1.csv'
+df = pd.read_csv(file_path, encoding='ascii')
+
+# Display the first few rows of the dataframe
+print("Original DataFrame:")
+print(df.head())
+
+# Display column names
+print("\
+Column names:")
+print(df.columns)
+
+# Display data types
+print("\
+Data types:")
+print(df.dtypes)
+
+# Display shape of the dataframe
+print("\
+Dataframe shape:")
+print(df.shape)
+# Transpose the dataframe to correct the structure
+df = df.T
+
+# Set the first row as the header
+df.columns = df.iloc[0]
+
+# Remove the first row (now redundant header)
+df = df.iloc[1:].reset_index(drop=True)
+
+# Clean up column names
+df.columns = df.columns.str.strip()
+
+# Display the corrected dataframe
+print("\
+Corrected DataFrame:")
+print(df.head())
+
+# Check data types
+print("\
+Data Types:")
+print(df.dtypes)
+
+# Convert numeric columns to appropriate data types
+df['PPP'] = df['PPP'].str.replace('$', '').str.replace(',', '').astype(float)
+df['GNI'] = df['GNI'].str.replace('$', '').str.replace(',', '').astype(float)
+df['Global Debt Supply'] = df['Global Debt Supply'].str.replace('$', '').str.replace(',', '').astype(float)
+
+# Display updated data types
+print("\
+Updated Data Types:")
+print(df.dtypes)
+
+# Show summary statistics
+print("\
+Summary Statistics:")
+print(df.describe())
+
+# Create visualizations
+plt.figure(figsize=(12, 6))
+sns.scatterplot(data=df, x='PPP', y='GNI')
+plt.title('PPP vs GNI')
+plt.xlabel('PPP (Purchasing Power Parity)')
+plt.ylabel('GNI (Gross National Income)')
+plt.show()
+
+plt.figure(figsize=(12, 6))
+sns.boxplot(data=df, y='Debt Service')
+plt.title('Distribution of Debt Service')
+plt.ylabel('Debt Service')
+plt.show()
+
+# Display correlation matrix
+correlation_matrix = df.corr()
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix')
+plt.show()
+
+print("Exploratory Data Analysis completed.")
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the data
+file_path = 'Real World - Sheet1.csv'
+df = pd.read_csv(file_path, encoding='ascii')
+
+# Transpose the dataframe to correct the structure
+df = df.T
+
+# Set the first row as the header
+df.columns = df.iloc[0]
+
+# Remove the first row (now redundant header)
+df = df.iloc[1:].reset_index(drop=True)
+
+# Clean up column names
+df.columns = df.columns.str.strip()
+
+# Convert 'Global Debt Supply' to numeric
+# Remove '$' and ',' for conversion
+if 'Global Debt Supply' in df.columns:
+    df['Global Debt Supply'] = df['Global Debt Supply'].str.replace('$', '').str.replace(',', '').astype(float)
+
+# Plotting the bar chart
+plt.figure(figsize=(14, 8))
+sns.barplot(x=df.index, y='Global Debt Supply', data=df)
+plt.xticks(rotation=90)
+plt.title('Distribution of Global Debt Supply by Country')
+plt.xlabel('Country')
+plt.ylabel('Global Debt Supply (in USD)')
+plt.show()
+
+print("Bar chart visualization completed.")
+# Re-evaluate the dataframe structure
+print("\
+Re-evaluating DataFrame Structure:")
+print(df.head())
+
+# Check if 'Global Debt Supply' is in the columns
+print("\
+Columns:")
+print(df.columns)
+
+# Ensure 'Global Debt Supply' is correctly named and exists
+if 'Global Debt Supply' not in df.columns:
+    print("'Global Debt Supply' column not found. Checking for similar names...")
+    # Check for similar column names
+    for col in df.columns:
+        if 'Debt' in col:
+            print("Found similar column:", col)
+
+# Display the corrected dataframe
+print("\
+Corrected DataFrame:")
+print(df.head())
+# Re-load the data and fix the structure
+file_path = 'Real World - Sheet1.csv'
+df = pd.read_csv(file_path, encoding='ascii')
+
+# Transpose the dataframe to correct the structure
+df = df.T
+
+# Set the first row as the header
+df.columns = df.iloc[0]
+
+# Remove the first row (now redundant header)
+df = df.iloc[1:].reset_index(drop=True)
+
+# Clean up column names
+df.columns = df.columns.str.strip()
+
+# Display the corrected dataframe
+print("\
+Corrected DataFrame:")
+print(df.head())
+
+# Check if 'Global Debt Supply' is in the columns
+print("\
+Columns:")
+print(df.columns)
+
+# Convert 'Global Debt Supply' to numeric
+if 'Global Debt Supply' in df.columns:
+    df['Global Debt Supply'] = df['Global Debt Supply'].str.replace('$', '').str.replace(',', '').astype(float)
+
+# Plotting the bar chart
+plt.figure(figsize=(14, 8))
+sns.barplot(x='Countries', y='Global Debt Supply', data=df)
+plt.xticks(rotation=90)
+plt.title('Distribution of Global Debt Supply by Country')
+plt.xlabel('Country')
+plt.ylabel('Global Debt Supply (in USD)')
+plt.show()
+
+print("Bar chart visualization completed.")
+# Transpose the dataframe to correct the structure
+df = df.T
+
+# Set the first row as the header
+df.columns = df.iloc[0]
+
+# Remove the first row (now redundant header)
+df = df.iloc[1:].reset_index(drop=True)
+
+# Clean up column names
+df.columns = df.columns.str.strip()
+
+# Display the corrected dataframe
+print("\
+Corrected DataFrame:")
+print(df.head())
+# Re-load the data
+file_path = 'Real World - Sheet1.csv'
+df = pd.read_csv(file_path, encoding='ascii')
+
+# Display the original dataframe
+print("Original DataFrame:")
+print(df.head())
+
+# Set the correct column names
+df.columns = ['Countries', 'PPP', 'GNI', 'Debt Service', 'Global Debt Supply']
+
+# Display the corrected dataframe
+print("\
+Corrected DataFrame:")
+print(df.head())
+
+# Convert 'Global Debt Supply' to numeric
+df['Global Debt Supply'] = df['Global Debt Supply'].str.replace('$', '').str.replace(',', '').astype(float)
+
+# Calculate median and standard deviation
+median = df['Global Debt Supply'].median()
+std_dev = df['Global Debt Supply'].std()
+
+# Calculate the weight for each country
+df['Weight'] = (df['Global Debt Supply'] - median) / (1.72 * std_dev)
+
+# Sort the dataframe by weight
+df_sorted = df.sort_values('Weight', ascending=False)
+
+# Plotting the bar chart
+plt.figure(figsize=(14, 8))
+sns.barplot(x='Countries', y='Weight', data=df_sorted)
+plt.xticks(rotation=90)
+plt.title('Distribution of Global Debt Supply by Country (Weighted)')
+plt.xlabel('Country')
+plt.ylabel('Weight (Standard Deviations from Median)')
+plt.show()
+
+print("Bar chart visualization completed.")
+
+# Display summary statistics
+print("\
+Summary Statistics:")
+print(df['Global Debt Supply'].describe())
+
+# Display top 5 countries by weight
+print("\
+Top 5 Countries by Weight:")
+print(df_sorted[['Countries', 'Global Debt Supply', 'Weight']].head())
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Re-load the data
+file_path = 'Real World - Sheet1.csv'
+df = pd.read_csv(file_path, encoding='ascii')
+
+# Set the correct column names
+df.columns = ['Countries', 'PPP', 'GNI', 'Debt Service', 'Global Debt Supply']
+
+# Clean and convert data types
+df['PPP'] = df['PPP'].str.replace('$', '').str.replace(',', '').astype(float)
+df['GNI'] = df['GNI'].str.replace('$', '').str.replace(',', '').astype(float)
+df['Global Debt Supply'] = df['Global Debt Supply'].str.replace('$', '').str.replace(',', '').astype(float)
+
+# Calculate Debt-to-GNI ratio
+df['Debt_to_GNI'] = df['Global Debt Supply'] / df['GNI']
+
+# Extrapolate based on Debt Service
+df['Extrapolated_Debt'] = df['Global Debt Supply'] * (1 + df['Debt Service'] / 100)
+
+# Calculate the weight based on Extrapolated Debt
+df['Weight'] = df['Extrapolated_Debt'] / df['Extrapolated_Debt'].mean()
+
+# Sort by Weight in descending order
+df_sorted = df.sort_values('Weight', ascending=False)
+
+# Select the upper 75% percentile
+upper_75_percentile = df_sorted.head(int(len(df_sorted) * 0.75))
+
+# Display the results
+print("Analysis of Global Debt Supply based on GNI parity and Debt Service extrapolation:")
+print(upper_75_percentile[['Countries', 'GNI', 'Debt Service', 'Global Debt Supply', 'Extrapolated_Debt', 'Weight']])
+
+# Plotting
+plt.figure(figsize=(15, 10))
+sns.barplot(x='Countries', y='Weight', data=upper_75_percentile)
+plt.xticks(rotation=90)
+plt.title('Weighted Global Debt Supply (Upper 75% Percentile)')
+plt.xlabel('Countries')
+plt.ylabel('Weight')
+plt.tight_layout()
+plt.show()
+
+# Calculate and display summary statistics
+print("\
+Summary Statistics for the Upper 75% Percentile:")
+print(upper_75_percentile['Weight'].describe())
+
+# Display top 5 countries by weight
+print("\
+Top 5 Countries by Weight:")
+print(upper_75_percentile[['Countries', 'Extrapolated_Debt', 'Weight']].head())
+
+# Calculate correlation between GNI and Extrapolated Debt
+correlation = df['GNI'].corr(df['Extrapolated_Debt'])
+print(f"\
+Correlation between GNI and Extrapolated Debt: {correlation:.2f}")
